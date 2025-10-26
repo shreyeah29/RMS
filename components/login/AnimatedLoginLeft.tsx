@@ -16,9 +16,9 @@ export function AnimatedLoginLeft() {
     const offsetWidth = rect.width;
     const offsetHeight = rect.height;
     
-    // Calculate rotation for 3D tilt effect
-    const x = (offsetX / offsetWidth - 0.5) * 30;
-    const y = (offsetY / offsetHeight - 0.5) * -30;
+    // Calculate rotation for 3D tilt effect - increased multiplier for more movement
+    const x = (offsetX / offsetWidth - 0.5) * 40;
+    const y = (offsetY / offsetHeight - 0.5) * -40;
     setRotate({ x, y });
     
     // Track mouse position for individual shape movement
@@ -49,13 +49,7 @@ export function AnimatedLoginLeft() {
       </div>
 
       {/* Animated Character Shapes */}
-      <div
-        className="absolute w-full h-full"
-        style={{
-          transform: `perspective(1000px) rotateX(${rotate.x * 0.1}deg) rotateY(${rotate.y * 0.1}deg)`,
-          transformStyle: 'preserve-3d',
-        }}
-      >
+      <div className="absolute w-full h-full">
         {/* Orange Semi-circle Character */}
         <motion.div
           className="absolute bottom-32 left-32 w-40 h-40"
@@ -69,7 +63,7 @@ export function AnimatedLoginLeft() {
             ease: 'easeInOut',
           }}
           style={{
-            transform: `translate(${rotate.y * 0.5}px, ${rotate.x * 0.5}px)`,
+            transform: `translate(${rotate.y * 1}px, ${rotate.x * 1}px) rotateZ(${rotate.y * 0.1}deg)`,
           }}
         >
           <div className="w-full h-full bg-gradient-to-br from-orange-400 to-orange-600 rounded-t-full flex flex-col items-center justify-center shadow-xl">
@@ -95,7 +89,7 @@ export function AnimatedLoginLeft() {
             delay: 0.5,
           }}
           style={{
-            transform: `translate(${-rotate.y * 0.3}px, ${-rotate.x * 0.3}px)`,
+            transform: `translate(${-rotate.y * 0.8}px, ${-rotate.x * 0.8}px) rotateZ(${-rotate.y * 0.12}deg)`,
           }}
         >
           <div className="w-full h-full bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex flex-col items-center justify-center shadow-xl">
@@ -121,7 +115,7 @@ export function AnimatedLoginLeft() {
             delay: 1,
           }}
           style={{
-            transform: `translate(${rotate.y * 0.4}px, ${-rotate.x * 0.4}px)`,
+            transform: `translate(${rotate.y * 0.6}px, ${-rotate.x * 0.6}px) rotateZ(${rotate.y * 0.15}deg)`,
           }}
         >
           <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl flex flex-col items-center justify-center shadow-xl">
@@ -147,7 +141,7 @@ export function AnimatedLoginLeft() {
             delay: 0.3,
           }}
           style={{
-            transform: `translate(${-rotate.y * 0.6}px, ${rotate.x * 0.6}px)`,
+            transform: `translate(${-rotate.y * 1.2}px, ${rotate.x * 1.2}px) rotateZ(${-rotate.y * 0.2}deg)`,
           }}
         >
           <div className="w-full h-full bg-gradient-to-br from-yellow-300 to-yellow-400 rounded-t-[50%] rounded-b-[30%] flex flex-col items-center justify-center shadow-xl">

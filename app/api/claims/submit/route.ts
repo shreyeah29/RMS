@@ -40,7 +40,7 @@ export async function POST(req: Request) {
       userId: (session.user as any).id,
       action: 'CREATE_CLAIM',
       entityType: 'Claim',
-      entityId: claim._id.toString(),
+      entityId: String(claim._id),
       role: session.user.role,
       details: { claimId, category, amount },
     });

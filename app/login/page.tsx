@@ -6,9 +6,8 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { User, Building2, ArrowLeft } from 'lucide-react';
-import Link from 'next/link';
+import { AnimatedLoginLeft } from '@/components/login/AnimatedLoginLeft';
+import { User, Building2, Mail, Lock } from 'lucide-react';
 
 type UserType = 'employee' | 'company';
 

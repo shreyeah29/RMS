@@ -35,7 +35,7 @@ export const authOptions: NextAuthOptions = {
         }
 
         return {
-          id: employee._id.toString(),
+          id: String(employee._id),
           email: employee.email,
           name: employee.name,
           role: employee.role,

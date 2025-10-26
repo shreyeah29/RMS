@@ -11,8 +11,8 @@ export function AnimatedLoginLeft() {
     if (!ref.current) return;
     const { offsetX, offsetY } = e;
     const { offsetWidth, offsetHeight } = ref.current;
-    const x = (offsetX / offsetWidth - 0.5) * 20;
-    const y = (offsetY / offsetHeight - 0.5) * -20;
+    const x = (offsetX / offsetWidth - 0.5) * 30;  // Increased from 20 to 30 for stronger tilt
+    const y = (offsetY / offsetHeight - 0.5) * -30; // Increased from 20 to 30 for stronger tilt
     setRotate({ x, y });
   };
 

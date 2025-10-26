@@ -41,7 +41,6 @@ const navItems: NavItem[] = [
 
 export function Header() {
   const { data: session } = useSession();
-  const pathname = usePathname();
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
@@ -54,19 +53,9 @@ export function Header() {
     setDarkMode(!darkMode);
   };
 
-  const filteredItems = navItems.filter((item) => {
-    const isAdmin = session?.user?.role === 'admin';
-    const isEmployee = session?.user?.role === 'employee';
-    
-    if (item.adminOnly) return isAdmin;
-    if (item.employeeOnly) return isEmployee;
-    return true;
-  });
-
   return (
     <header className="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b">
-      {/* Top Bar */}
-      <div className="flex h-16 items-center justify-between px-6 border-b">
+      <div className="flex h-16 items-center justify-between px-6">
         <div className="flex items-center gap-4">
           <h1 className="text-2xl font-bold">RMS</h1>
         </div>
@@ -103,28 +92,6 @@ export function Header() {
           </div>
         </div>
       </div>
-
-      {/* Navigation Bar */}
-      <nav className="flex items-center gap-1 px-6 overflow-x-auto bg-slate-50 dark:bg-slate-800/50">
-        {filteredItems.map((item) => {
-          const isActive = pathname === item.href;
-          return (
-            <Link
-              key={item.name}
-              href={item.href}
-              className={cn(
-                'flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-colors whitespace-nowrap',
-                isActive
-                  ? 'bg-blue-600 text-white'
-                  : 'text-gray-700 dark:text-gray-300 hover:bg-slate-200 dark:hover:bg-slate-700'
-              )}
-            >
-              <item.icon className="h-4 w-4" />
-              {item.name}
-            </Link>
-          );
-        })}
-      </nav>
     </header>
   );
 }

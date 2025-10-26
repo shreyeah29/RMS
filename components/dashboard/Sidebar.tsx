@@ -22,13 +22,14 @@ interface SidebarItem {
   icon: React.ComponentType<{ className?: string }>;
   href: string;
   adminOnly?: boolean;
+  employeeOnly?: boolean;
 }
 
 const sidebarItems: SidebarItem[] = [
   { name: 'Dashboard', icon: LayoutDashboard, href: '/dashboard', adminOnly: false },
   { name: 'Profile', icon: User, href: '/dashboard/profile', adminOnly: false },
-  { name: 'Submit Claim', icon: FileText, href: '/dashboard/claims/submit', adminOnly: false },
-  { name: 'My Claims', icon: History, href: '/dashboard/claims', adminOnly: false },
+  { name: 'Submit Claim', icon: FileText, href: '/dashboard/claims/submit', adminOnly: false, employeeOnly: true },
+  { name: 'My Claims', icon: History, href: '/dashboard/claims', adminOnly: false, employeeOnly: true },
   { name: 'Policy', icon: BookOpen, href: '/dashboard/policy', adminOnly: false },
   { name: 'Employees', icon: Users, href: '/dashboard/admin/employees', adminOnly: true },
   { name: 'All Claims', icon: FileCheck, href: '/dashboard/admin/claims', adminOnly: true },
@@ -39,9 +40,19 @@ export function Sidebar() {
   const pathname = usePathname();
   const { data: session } = useSession();
 
-  const filteredItems = sidebarItems.filter(
-    item => !item.adminOnly || session?.user?.role === 'admin'
-  );
+  const filteredItems = sidebarItems.filter((item) => {
+    const isAdmin = session?.user?.role === 'admin';
+    const isEmployee = session?.user?.role === 'employee';
+    
+    // Show item if:
+    // - It's admin only and user is admin
+    // - It's employee only and user is employee
+    // - It has no restrictions (adminOnly or employeeOnly)
+    
+    if (item.adminOnly) return isAdmin;
+    if (item.employeeOnly) return isEmployee;
+    return true; // Show items without restrictions to everyone
+  });
 
   return (
     <div className="flex h-screen w-64 flex-col bg-slate-900 text-white">

@@ -2,7 +2,7 @@ import { config } from 'dotenv';
 import { resolve } from 'path';
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
-import Employee from '../models/Employee';
+import Employee from '../models/Employee.js';
 
 // Load environment variables
 config({ path: resolve(__dirname, '../.env.local') });

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Building2, User, DollarSign, FileText, Shield, TrendingUp } from 'lucide-react';
+import { Building2, User, DollarSign } from 'lucide-react';
 
 export default function LandingPage() {
   return (
@@ -90,39 +90,6 @@ export default function LandingPage() {
                 </div>
               </Card>
             </Link>
-          </div>
-
-          {/* Features Section */}
-          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            <Card className="p-6 bg-white/10 backdrop-blur-sm border-white/20">
-              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4">
-                <FileText className="h-6 w-6 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Easy Claim Submission</h3>
-              <p className="text-blue-100">
-                Submit your reimbursement claims with receipts and invoices in just a few clicks.
-              </p>
-            </Card>
-
-            <Card className="p-6 bg-white/10 backdrop-blur-sm border-white/20">
-              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4">
-                <Shield className="h-6 w-6 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Secure & Reliable</h3>
-              <p className="text-blue-100">
-                Enterprise-grade security with encrypted data, secure file storage, and audit trails.
-              </p>
-            </Card>
-
-            <Card className="p-6 bg-white/10 backdrop-blur-sm border-white/20">
-              <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4">
-                <TrendingUp className="h-6 w-6 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Real-Time Analytics</h3>
-              <p className="text-blue-100">
-                Track spending patterns, department budgets, and financial insights with detailed reports.
-              </p>
-            </Card>
           </div>
         </div>
       </div>

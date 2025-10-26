@@ -217,37 +217,156 @@ export default function EmployeeDetailPage() {
           </CardContent>
         </Card>
 
-        {/* Recent Claims Section */}
+        {/* Reimbursement Claims - Detailed Table */}
         <Card>
           <CardHeader>
-            <CardTitle>Reimbursement Claims</CardTitle>
-            <CardDescription>All claims submitted by this employee</CardDescription>
+            <div className="flex items-center justify-between">
+              <div>
+                <CardTitle>Reimbursement Details</CardTitle>
+                <CardDescription>Complete reimbursement history with eligibility status</CardDescription>
+              </div>
+              <Badge variant="success">
+                ✓ Eligible for Reimbursement
+              </Badge>
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="space-y-3">
-              <div className="flex items-center justify-between p-3 border rounded-lg">
-                <div>
-                  <p className="font-medium">Travel - ₹1,500</p>
-                  <p className="text-sm text-muted-foreground">Status: Approved</p>
-                  <p className="text-xs text-muted-foreground">INV-2024-001</p>
-                </div>
-                <Badge variant="success">Approved</Badge>
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b">
+                    <th className="py-3 text-left text-sm font-medium">Invoice No.</th>
+                    <th className="py-3 text-left text-sm font-medium">Category</th>
+                    <th className="py-3 text-left text-sm font-medium">Amount</th>
+                    <th className="py-3 text-left text-sm font-medium">Date of Claim</th>
+                    <th className="py-3 text-left text-sm font-medium">Date of Reimbursement</th>
+                    <th className="py-3 text-left text-sm font-medium">Status</th>
+                    <th className="py-3 text-left text-sm font-medium">Eligibility</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {/* Claim 1 */}
+                  <tr className="border-b hover:bg-slate-50 dark:hover:bg-slate-800">
+                    <td className="py-3 text-sm font-medium">INV-2024-001</td>
+                    <td className="py-3 text-sm">Travel</td>
+                    <td className="py-3 text-sm">₹1,500</td>
+                    <td className="py-3 text-sm">Jan 15, 2024</td>
+                    <td className="py-3 text-sm">Jan 18, 2024</td>
+                    <td className="py-3">
+                      <Badge variant="success">Approved</Badge>
+                    </td>
+                    <td className="py-3">
+                      <Badge variant="success">✓ Eligible</Badge>
+                    </td>
+                  </tr>
+                  
+                  {/* Claim 2 */}
+                  <tr className="border-b hover:bg-slate-50 dark:hover:bg-slate-800">
+                    <td className="py-3 text-sm font-medium">INV-2024-002</td>
+                    <td className="py-3 text-sm">Food & Dining</td>
+                    <td className="py-3 text-sm">₹850</td>
+                    <td className="py-3 text-sm">Jan 20, 2024</td>
+                    <td className="py-3 text-sm text-muted-foreground">-</td>
+                    <td className="py-3">
+                      <Badge variant="warning">Pending</Badge>
+                    </td>
+                    <td className="py-3">
+                      <Badge variant="success">✓ Eligible</Badge>
+                    </td>
+                  </tr>
+                  
+                  {/* Claim 3 */}
+                  <tr className="border-b hover:bg-slate-50 dark:hover:bg-slate-800">
+                    <td className="py-3 text-sm font-medium">INV-2024-003</td>
+                    <td className="py-3 text-sm">Medical</td>
+                    <td className="py-3 text-sm">₹2,300</td>
+                    <td className="py-3 text-sm">Feb 5, 2024</td>
+                    <td className="py-3 text-sm">Feb 8, 2024</td>
+                    <td className="py-3">
+                      <Badge variant="success">Approved</Badge>
+                    </td>
+                    <td className="py-3">
+                      <Badge variant="success">✓ Eligible</Badge>
+                    </td>
+                  </tr>
+                  
+                  {/* Claim 4 */}
+                  <tr className="border-b hover:bg-slate-50 dark:hover:bg-slate-800">
+                    <td className="py-3 text-sm font-medium">INV-2024-004</td>
+                    <td className="py-3 text-sm">Equipment</td>
+                    <td className="py-3 text-sm">₹5,000</td>
+                    <td className="py-3 text-sm">Feb 12, 2024</td>
+                    <td className="py-3 text-sm">Feb 15, 2024</td>
+                    <td className="py-3">
+                      <Badge variant="success">Approved</Badge>
+                    </td>
+                    <td className="py-3">
+                      <Badge variant="success">✓ Eligible</Badge>
+                    </td>
+                  </tr>
+                  
+                  {/* Claim 5 */}
+                  <tr className="border-b hover:bg-slate-50 dark:hover:bg-slate-800">
+                    <td className="py-3 text-sm font-medium">INV-2024-005</td>
+                    <td className="py-3 text-sm">Lodging</td>
+                    <td className="py-3 text-sm">₹3,200</td>
+                    <td className="py-3 text-sm">Mar 10, 2024</td>
+                    <td className="py-3 text-sm text-muted-foreground">-</td>
+                    <td className="py-3">
+                      <Badge variant="warning">Pending</Badge>
+                    </td>
+                    <td className="py-3">
+                      <Badge variant="success">✓ Eligible</Badge>
+                    </td>
+                  </tr>
+                  
+                  {/* Claim 6 */}
+                  <tr className="border-b hover:bg-slate-50 dark:hover:bg-slate-800">
+                    <td className="py-3 text-sm font-medium">INV-2024-006</td>
+                    <td className="py-3 text-sm">Travel</td>
+                    <td className="py-3 text-sm">₹2,100</td>
+                    <td className="py-3 text-sm">Mar 22, 2024</td>
+                    <td className="py-3 text-sm">Mar 25, 2024</td>
+                    <td className="py-3">
+                      <Badge variant="success">Approved</Badge>
+                    </td>
+                    <td className="py-3">
+                      <Badge variant="success">✓ Eligible</Badge>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Date Range Summary */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Reimbursement Period Summary</CardTitle>
+            <CardDescription>Reimbursement activity overview</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <p className="text-sm font-medium">Reimbursement Start Date</p>
+                <p className="text-lg font-semibold">January 15, 2024</p>
+                <p className="text-xs text-muted-foreground">First claim submitted</p>
               </div>
-              <div className="flex items-center justify-between p-3 border rounded-lg">
-                <div>
-                  <p className="font-medium">Food & Dining - ₹850</p>
-                  <p className="text-sm text-muted-foreground">Status: Pending</p>
-                  <p className="text-xs text-muted-foreground">INV-2024-002</p>
-                </div>
-                <Badge variant="warning">Pending</Badge>
+              <div className="space-y-2">
+                <p className="text-sm font-medium">Last Reimbursement Date</p>
+                <p className="text-lg font-semibold">March 25, 2024</p>
+                <p className="text-xs text-muted-foreground">Most recent approval</p>
               </div>
-              <div className="flex items-center justify-between p-3 border rounded-lg">
-                <div>
-                  <p className="font-medium">Medical - ₹2,300</p>
-                  <p className="text-sm text-muted-foreground">Status: Approved</p>
-                  <p className="text-xs text-muted-foreground">INV-2024-003</p>
-                </div>
-                <Badge variant="success">Approved</Badge>
+              <div className="space-y-2">
+                <p className="text-sm font-medium">Total Period</p>
+                <p className="text-lg font-semibold">70 days</p>
+                <p className="text-xs text-muted-foreground">Jan 15 - Mar 25, 2024</p>
+              </div>
+              <div className="space-y-2">
+                <p className="text-sm font-medium">Average Processing Time</p>
+                <p className="text-lg font-semibold">3.2 days</p>
+                <p className="text-xs text-muted-foreground">From claim to reimbursement</p>
               </div>
             </div>
           </CardContent>

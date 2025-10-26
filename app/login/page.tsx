@@ -79,7 +79,7 @@ export default function LoginPage() {
               }`}
             >
               <Building2 className="h-5 w-5" />
-              Admin / HR Login
+              Company Login
             </button>
           </div>
 
@@ -87,12 +87,12 @@ export default function LoginPage() {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email">
-                {userType === 'employee' ? 'Employee Email' : 'Admin Email'}
+                {userType === 'employee' ? 'Employee Email' : 'Company Email'}
               </Label>
               <Input
                 id="email"
                 type="email"
-                placeholder={userType === 'employee' ? 'employee@company.com' : 'admin@company.com'}
+                placeholder={userType === 'employee' ? 'employee@company.com' : 'company@company.com'}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -119,14 +119,14 @@ export default function LoginPage() {
               className="w-full h-11 text-base"
               disabled={loading}
             >
-              {loading ? 'Signing in...' : userType === 'employee' ? 'Sign In as Employee' : 'Sign In as Admin'}
+              {loading ? 'Signing in...' : userType === 'employee' ? 'Sign In as Employee' : 'Sign In as Company'}
             </Button>
           </form>
 
           {/* Info Box */}
           <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
             <p className="text-sm font-medium text-blue-900 dark:text-blue-100 mb-2">
-              {userType === 'employee' ? '👤 Employee Access' : '🏢 Admin Access'}
+              {userType === 'employee' ? '👤 Employee Access' : '🏢 Company Access'}
             </p>
             <p className="text-xs text-blue-700 dark:text-blue-300">
               {userType === 'employee'

@@ -1,14 +1,14 @@
 'use client';
 
 import { signIn } from 'next-auth/react';
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { User, Building2, ArrowLeft } from 'lucide-react';
-import Link from 'next/link';
+import { AnimatedLoginLeft } from '@/components/login/AnimatedLoginLeft';
+import { User, Building2, Lock, Mail } from 'lucide-react';
 
 type UserType = 'employee' | 'company';
 
@@ -99,7 +99,6 @@ function LoginForm() {
 
           {/* Login Form */}
           <form onSubmit={handleSubmit} className="space-y-5">
-
             <div className="space-y-2">
               <Label htmlFor="email" className="text-gray-700 dark:text-gray-300">
                 <Mail className="h-4 w-4 inline mr-2" />
@@ -161,20 +160,14 @@ function LoginForm() {
   );
 }
 
-export default function LoginPage() {
+export default function LoginNewPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-slate-900 dark:to-slate-800">
-        <Card className="w-full max-w-lg shadow-xl">
-          <CardHeader className="space-y-1 pb-6">
-            <CardTitle className="text-3xl font-bold text-center bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-              Reimbursement Management System
-            </CardTitle>
-            <CardDescription className="text-center">
-              Loading...
-            </CardDescription>
-          </CardHeader>
-        </Card>
+      <div className="flex h-screen items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin mx-auto"></div>
+          <p className="mt-4 text-gray-600">Loading...</p>
+        </div>
       </div>
     }>
       <LoginForm />

@@ -141,6 +141,16 @@ export default function LoginPage() {
               <span className="font-medium">Demo Credentials:</span> admin@company.com / Admin@1234
             </p>
           </div>
+
+          {/* Register Link */}
+          <div className="text-center pt-4">
+            <p className="text-sm text-slate-600 dark:text-slate-400">
+              Don't have an account?{' '}
+              <a href="/register" className="text-blue-600 hover:underline dark:text-blue-400 font-medium">
+                Create an account
+              </a>
+            </p>
+          </div>
         </CardContent>
       </Card>
     </div>

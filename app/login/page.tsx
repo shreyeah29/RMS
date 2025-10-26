@@ -124,7 +124,7 @@ export default function LoginPage() {
               className="w-full h-11 text-base"
               disabled={loading}
             >
-              {loading ? 'Signing in...' : userType === 'employee' ? 'Sign In' : 'Sign In as Company'}
+              {loading ? 'Signing in...' : 'Sign In'}
             </Button>
           </form>
 

@@ -40,13 +40,7 @@ export default function LandingPage() {
             <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
               Streamline your expense claims, track reimbursements, and manage your financial operations with enterprise-grade security.
             </p>
-            <div className="flex gap-4 justify-center">
-              <Link href="/login">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg">
-                  Sign In
-                </Button>
-              </Link>
-            </div>
+            {/* Removed sign in button from hero section */}
           </div>
 
           {/* Sign In Options Cards */}

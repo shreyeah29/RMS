@@ -163,17 +163,11 @@ function LoginForm() {
 export default function LoginPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-slate-900 dark:to-slate-800">
-        <Card className="w-full max-w-lg shadow-xl">
-          <CardHeader className="space-y-1 pb-6">
-            <CardTitle className="text-3xl font-bold text-center bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-              Reimbursement Management System
-            </CardTitle>
-            <CardDescription className="text-center">
-              Loading...
-            </CardDescription>
-          </CardHeader>
-        </Card>
+      <div className="flex h-screen items-center justify-center bg-[#F9FAFB]">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin mx-auto"></div>
+          <p className="mt-4 text-gray-600">Loading...</p>
+        </div>
       </div>
     }>
       <LoginForm />

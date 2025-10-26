@@ -41,11 +41,6 @@ export default function LandingPage() {
               Streamline your expense claims, track reimbursements, and manage your financial operations with enterprise-grade security.
             </p>
             <div className="flex gap-4 justify-center">
-              <Link href="/register">
-                <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-6 text-lg">
-                  Start Free Trial
-                </Button>
-              </Link>
               <Link href="/login">
                 <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg">
                   Sign In

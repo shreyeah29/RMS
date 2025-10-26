@@ -42,7 +42,7 @@ export async function PATCH(
       userId: (session.user as any).id,
       action: `UPDATE_CLAIM_${status.toUpperCase()}`,
       entityType: 'Claim',
-      entityId: claim._id.toString(),
+      entityId: String(claim._id),
       role: session.user.role,
       details: { claimId: params.id, status, remarks },
     });

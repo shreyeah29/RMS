@@ -9,8 +9,11 @@ export function AnimatedLoginLeft() {
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return;
-    const { offsetX, offsetY } = e;
-    const { offsetWidth, offsetHeight } = ref.current;
+    const rect = ref.current.getBoundingClientRect();
+    const offsetX = e.clientX - rect.left;
+    const offsetY = e.clientY - rect.top;
+    const offsetWidth = rect.width;
+    const offsetHeight = rect.height;
     const x = (offsetX / offsetWidth - 0.5) * 30;  // Increased from 20 to 30 for stronger tilt
     const y = (offsetY / offsetHeight - 0.5) * -30; // Increased from 20 to 30 for stronger tilt
     setRotate({ x, y });

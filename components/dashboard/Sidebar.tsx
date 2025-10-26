@@ -25,11 +25,11 @@ interface SidebarItem {
 }
 
 const sidebarItems: SidebarItem[] = [
-  { name: 'Dashboard', icon: LayoutDashboard, href: '/dashboard' },
-  { name: 'Profile', icon: User, href: '/dashboard/profile' },
-  { name: 'Submit Claim', icon: FileText, href: '/dashboard/claims/submit' },
-  { name: 'My Claims', icon: History, href: '/dashboard/claims' },
-  { name: 'Policy', icon: BookOpen, href: '/dashboard/policy' },
+  { name: 'Dashboard', icon: LayoutDashboard, href: '/dashboard', adminOnly: false },
+  { name: 'Profile', icon: User, href: '/dashboard/profile', adminOnly: false },
+  { name: 'Submit Claim', icon: FileText, href: '/dashboard/claims/submit', adminOnly: false },
+  { name: 'My Claims', icon: History, href: '/dashboard/claims', adminOnly: false },
+  { name: 'Policy', icon: BookOpen, href: '/dashboard/policy', adminOnly: false },
   { name: 'Employees', icon: Users, href: '/dashboard/admin/employees', adminOnly: true },
   { name: 'All Claims', icon: FileCheck, href: '/dashboard/admin/claims', adminOnly: true },
   { name: 'Analytics', icon: BarChart3, href: '/dashboard/admin/analytics', adminOnly: true },
